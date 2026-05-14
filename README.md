@@ -115,11 +115,6 @@ GROQ_API_KEY=your_groq_api_key
 
 ---
 
-## 📜 License
-
-MIT © [Geyas Sri Vagdevi](https://github.com/geyasrivagdevi)
-
----
 
 ## 🙏 Acknowledgements
 
