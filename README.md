@@ -1,99 +1,128 @@
-
-<h1 align="center">🏦 Bank Management System</h1>
+<h1 align="center">💳 Banking Dashboard</h1>
 
 <p align="center">
-  ✨ A modern banking solution with facial recognition, role-based dashboards, and secure transactions ✨
+  A full-stack banking web app with facial recognition login, role-based dashboards, and real-time transaction management.
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/thinakaranmanokaran/Bank_Management/main/client/public/screenshot.png" width="100%" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/MERN-Full%20Stack-blue?logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/Security-Face%20Recognition-green" />
+  <img src="https://img.shields.io/badge/Stack-MERN-informational?logo=mongodb&logoColor=white" />
+  <img src="https://img.shields.io/badge/Auth-Face%20Recognition%20%2B%20JWT-blueviolet" />
+  <img src="https://img.shields.io/badge/UI-Tailwind%20CSS-38bdf8" />
   <img src="https://img.shields.io/badge/License-MIT-brightgreen" />
 </p>
 
 ---
 
-## 🌟 Features
+## ✨ Features
 
-<p align="center">
-
-| 🔐 **Authentication** | 👥 **Role-Based Access** | 💰 **Transactions** | 📱 **Responsive UI** | 🛡️ **Security** |
-|----------------------|--------------------------|----------------------|-----------------------|----------------|
-| Facial recognition login via `face-api.js` + JWT | Admin, Employee, and User dashboards | Real-time deposits, withdrawals, loan workflows | Tailwind-powered responsive interface | Encrypted MongoDB data + role-based access |
-
-</p>
+| Feature | Description |
+|--------|-------------|
+| 🎭 Face Recognition Login | Biometric authentication using `face-api.js` with JWT session handling |
+| 🔐 Role-Based Access | Separate dashboards for Admin, Employee, and Customer roles |
+| 💸 Transactions | Deposit, withdraw, and transfer with live balance updates |
+| 🏦 Loan Management | Apply, review, and approve loan requests through a workflow |
+| 🤖 AI Credit Score | GROQ-powered CIBIL score analysis and suggestions |
+| 📱 Responsive Design | Fully responsive UI built with Tailwind CSS |
 
 ---
 
 ## 🛠️ Tech Stack
 
-<p >
-  ⚛️ <strong>Frontend</strong>: React.js + Tailwind CSS <br/>
-  🟢 <strong>Backend</strong>: Node.js + Express.js <br/>
-  🍃 <strong>Database</strong>: MongoDB <br/>
-  👁️ <strong>Authentication</strong>: face-api.js + JWT <br/>
-  🛠️ <strong>Tools</strong>: Axios, React Router, Mongoose
-</p>
+**Frontend** — React.js, Tailwind CSS, React Router, Axios  
+**Backend** — Node.js, Express.js, Mongoose  
+**Database** — MongoDB  
+**Authentication** — face-api.js, JWT  
+**AI** — GROQ API (OpenAI-compatible)
 
 ---
 
-## 🚀 Quick Start
+## ⚙️ Getting Started
 
-<p align="center">
+### Prerequisites
+- Node.js v18+
+- MongoDB (local or Atlas)
+- GROQ API key
+
+### Installation
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/thinakaranmanokaran/Bank_Management.git
-cd Bank_Management
+git clone https://github.com/geyasrivagdevi/banking_dashboard.git
+cd banking_dashboard
 
-# 2. Backend Setup
+# 2. Backend setup
 cd server
 npm install
-npm start  # 🚀 http://localhost:5000
 
-# 3. Frontend Setup
+# 3. Create your environment file
+# Create server/.env and add:
+# MONGO_URI=your_mongodb_uri
+# JWT_SECRET=your_jwt_secret
+# GROQ_API_KEY=your_groq_key
+
+npm start  # runs on http://localhost:5000
+
+# 4. Frontend setup
 cd ../client
 npm install
-npm start  # ⚛️ http://localhost:3000
-💡 Pro Tip: Use run.bat on Windows to start both servers in one go! ⚡
+npm run dev  # runs on http://localhost:5173
 ```
 
-## 📸 **Screenshots** *(Replace with actual images)*  
-
-| Login (Facial Recognition) | Admin Dashboard | User Transactions |
-|---------------------------|-----------------|-------------------|
-| ![Profile](https://raw.githubusercontent.com/thinakaranmanokaran/Bank_Management/main/client/public/snap/screencapture-localhost-5173-user-profile-2025-03-27-17_17_37.png) | ![Tools](https://raw.githubusercontent.com/thinakaranmanokaran/Bank_Management/main/client/public/snap/screencapture-localhost-5173-user-dashboard-2025-03-27-17_17_19.png) | ![Transactions](https://raw.githubusercontent.com/thinakaranmanokaran/Bank_Management/main/client/public/snap/screencapture-localhost-5173-user-transactions-2025-03-27-17_18_12.png) |
+> 💡 On Windows, run `run.bat` from the root folder to start both servers at once.
 
 ---
 
-## 🤝 **Contributing**  
+## 📁 Project Structure
 
-We welcome contributions! Follow these steps:  
-1. Fork the repo 🍴  
-2. Create a branch (git checkout -b feature/awesome-feature)  
-3. Commit changes (git commit -m 'Add feature')  
-4. Push to branch (git push origin feature/awesome-feature)  
-5. Open a PR! 🎉  
-
----
-
-## 📜 **License**  
-
-MIT © [Thinakaran Manokaran](https://thinakaranmanokaran.netlify.app/)  
-
----
-
-## 🙏 **Acknowledgements**  
-
-- [face-api.js](https://github.com/justadudewhohacks/face-api.js) for facial recognition magic!  
-- [Tailwind CSS](https://tailwindcss.com/) for effortless styling.  
-- [MERN Stack](https://www.mongodb.com/mern-stack) for a powerful foundation.  
+```
+banking_dashboard/
+├── client/          # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── assets/
+├── server/          # Express backend
+│   ├── routes/
+│   ├── controllers/
+│   ├── models/
+│   └── middlewares/
+└── run.bat
+```
 
 ---
 
+## 🔑 Environment Variables
 
+Create a `.env` file inside the `server/` folder:
 
+```
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
+GROQ_API_KEY=your_groq_api_key
+```
+
+> ⚠️ Never commit your `.env` file. It's already in `.gitignore`.
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create a branch — `git checkout -b feature/your-feature`
+3. Commit your changes — `git commit -m "Add your feature"`
+4. Push — `git push origin feature/your-feature`
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+MIT © [Geyas Sri Vagdevi](https://github.com/geyasrivagdevi)
+
+---
+
+## 🙏 Acknowledgements
+
+- [face-api.js](https://github.com/justadudewhohacks/face-api.js) for facial recognition
+- [Tailwind CSS](https://tailwindcss.com/) for the UI
+- [GROQ](https://groq.com/) for AI-powered credit analysis
